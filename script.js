@@ -1,83 +1,76 @@
-initMultiStepForm();
+document.addEventListener("DOMContentLoaded", function () {
+    const steps = document.querySelectorAll(".step");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const sidebarItems = document.querySelectorAll(".sidebar ul li"); // Select sidebar items
+    const stepNumber = document.getElementById("stepNumber"); // Step number in heading
 
-function initMultiStepForm() {
-    const progressNumber = document.querySelectorAll(".step").length;
-    const slidePage = document.querySelector(".slide-page");
-    const submitBtn = document.querySelector(".submit");
-    const progressText = document.querySelectorAll(".step p");
-    const progressCheck = document.querySelectorAll(".step .check");
-    const bullet = document.querySelectorAll(".step .bullet");
-    const pages = document.querySelectorAll(".page");
-    const nextButtons = document.querySelectorAll(".next");
-    const prevButtons = document.querySelectorAll(".prev");
-    const stepsNumber = pages.length;
+    let currentStep = 0;
 
-    if (progressNumber !== stepsNumber) {
-        console.warn(
-            "Error, number of steps in progress bar do not match number of pages"
-        );
-    }
-
-    document.documentElement.style.setProperty("--stepNumber", stepsNumber);
-
-    let current = 1;
-
-    for (let i = 0; i < nextButtons.length; i++) {
-        nextButtons[i].addEventListener("click", function (event) {
-            event.preventDefault();
-
-            inputsValid = validateInputs(this);
-            // inputsValid = true;
-
-            if (inputsValid) {
-                slidePage.style.marginLeft = `-${
-                    (100 / stepsNumber) * current
-                }%`;
-                bullet[current - 1].classList.add("active");
-                progressCheck[current - 1].classList.add("active");
-                progressText[current - 1].classList.add("active");
-                current += 1;
-            }
+    function updateForm() {
+        steps.forEach((step, index) => {
+            step.classList.toggle("active", index === currentStep);
         });
+        stepNumber.textContent = currentStep + 1;
+        sidebarItems.forEach((item, index) => {
+            item.classList.toggle("active", index === currentStep);
+        });
+
+        prevBtn.disabled = currentStep === 0;
+        nextBtn.textContent = currentStep === steps.length - 1 ? "Submit" : "Next";
     }
 
-    for (let i = 0; i < prevButtons.length; i++) {
-        prevButtons[i].addEventListener("click", function (event) {
-            event.preventDefault();
-            slidePage.style.marginLeft = `-${
-                (100 / stepsNumber) * (current - 2)
-            }%`;
-            bullet[current - 2].classList.remove("active");
-            progressCheck[current - 2].classList.remove("active");
-            progressText[current - 2].classList.remove("active");
-            current -= 1;
-        });
-    }
-    submitBtn.addEventListener("click", function () {
-        bullet[current - 1].classList.add("active");
-        progressCheck[current - 1].classList.add("active");
-        progressText[current - 1].classList.add("active");
-        current += 1;
-        setTimeout(function () {
-            alert("Your Form Successfully Signed up");
-            location.reload();
-        }, 800);
+    nextBtn.addEventListener("click", function () {
+        if (currentStep < steps.length - 1) {
+            currentStep++;
+            updateForm();
+        } else {
+            alert("Form Submitted!");
+        }
     });
 
-    function validateInputs(ths) {
-        let inputsValid = true;
-
-        const inputs =
-            ths.parentElement.parentElement.querySelectorAll("input");
-        for (let i = 0; i < inputs.length; i++) {
-            const valid = inputs[i].checkValidity();
-            if (!valid) {
-                inputsValid = false;
-                inputs[i].classList.add("invalid-input");
-            } else {
-                inputs[i].classList.remove("invalid-input");
-            }
+    prevBtn.addEventListener("click", function () {
+        if (currentStep > 0) {
+            currentStep--;
+            updateForm();
         }
-        return inputsValid;
+    });
+
+    updateForm();
+});
+
+// ===================== Car Model Selection ======================
+const carModels = {
+    Toyota: ["Corolla", "Camry", "RAV4", "Highlander", "Yaris"],
+    Honda: ["Civic", "Accord", "CR-V", "Pilot", "Fit"],
+    Ford: ["Focus", "Fiesta", "Mustang", "Escape", "Explorer"],
+    BMW: ["X5", "X3", "3 Series", "5 Series", "7 Series"],
+    Mercedes: ["C-Class", "E-Class", "S-Class", "GLC", "GLE"],
+    Nissan: ["Altima", "Sentra", "Maxima", "Rogue", "Murano"],
+    Chevrolet: [
+        "Malibu", "Impala", "Equinox", "Tahoe", "Camaro",
+        "Suburban", "Silverado", "Traverse", "Trailblazer", "Blazer",
+        "Spark", "Sonic", "Avalanche", "Cruze", "Corvette",
+        "Optra", "Aveo"
+    ],
+    Hyundai: ["Elantra", "Sonata", "Tucson", "Santa Fe", "Kona"]
+};
+
+// Update Car Model Options Based on Selected Brand
+document.getElementById("car-make").addEventListener("change", function () {
+    const selectedBrand = this.value;
+    const carModelSelect = document.getElementById("car-model");
+
+    // Clear previous options
+    carModelSelect.innerHTML = '<option value="" disabled selected>Select Car Model</option>';
+
+    // Add new options
+    if (carModels[selectedBrand]) {
+        carModels[selectedBrand].forEach(model => {
+            let option = document.createElement("option");
+            option.value = model;
+            option.textContent = model;
+            carModelSelect.appendChild(option);
+        });
     }
-}
+});

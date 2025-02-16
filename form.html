@@ -1,173 +1,335 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="form">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Multistep form</title>
-  <link rel="stylesheet" href="design.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <body>
-        <div class="container">
-            <header>Insurance Policy </header>
-            <div class="progress-bar">
-                <div class="step">
-                    <p>Personal</p>
-                    <div class="bullet">
-                        <span>1</span>
-                    </div>
-                    <div class="check fas fa-check"></div>
-                </div>
-                <div class="step">
-                    <p>Car details</p>
-                    <div class="bullet">
-                        <span>2</span>
-                    </div>
-                    <div class="check fas fa-check"></div>
-                </div>
-                <div class="step">
-                    <p>Birth</p>
-                    <div class="bullet">
-                        <span>3</span>
-                    </div>
-                    <div class="check fas fa-check"></div>
-                </div>
-                <div class="step">
-                    <p>Debt</p>
-                    <div class="bullet">
-                        <span>4</span>
-                    </div>
-                    <div class="check fas fa-check"></div>
-                </div>
-                <div class="step">
-                    <p>Adress</p>
-                    <div class="bullet">
-                        <span>5</span>
-                    </div>
-                    <div class="check fas fa-check"></div>
-                </div>
-                <div class="step">
-                    <p>Submit</p>
-                    <div class="bullet">
-                        <span>6</span>
-                    </div>
-                    <div class="check fas fa-check"></div>
-                </div>
-            </div>
-            <div class="form-outer">
-                <form action="#">
-                    <div class="page slide-page">
-                        <div class="title">Basic Information:</div>
-                        <div class="field">
-                            <div class="label">First Name</div>
-                            <input type="text" required />
-                        </div>
-                        <div class="field">
-                            <div class="label">Last Name</div>
-                            <input type="text" required />
-                        </div>
-                        <div class="field">
-                            <div class="label">ID</div>
-                            <input type="number" required />
-                        </div>
-                        <div class="field">
-                            <div class="label">Email</div>
-                            <input type="email" required />
-                        </div>
-                        <div class="field">
-                            <div class="label">Phone</div>
-                            <input type="tel" required />
-                        </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Form</title>
+    <link rel="stylesheet" href="design.css">
+</head>
 
-                        <div class="field">
-                            <button class="firstNext next">Next</button>
-                        </div>
-                    </div>
-
-                    <div class="page">
-                        <div class="title">Contact Info:</div>
-                        <div class="field">
-                            <div class="label">Email Address</div>
-                            <input type="text" required />
-                        </div>
-                        <div class="field">
-                            <div class="label">Phone Number</div>
-                            <input type="Number" required />
-                        </div>
-                        <div class="field btns">
-                            <button class="prev-1 prev">Previous</button>
-                            <button class="next-1 next">Next</button>
-                        </div>
-                    </div>
-                    <div class="page">
-                        <div class="title">Contact Info 2:</div>
-                        <div class="field">
-                            <div class="label">Email Address</div>
-                            <input type="text" required />
-                        </div>
-                        <div class="field">
-                            <div class="label">Phone Number</div>
-                            <input type="Number" required />
-                        </div>
-                        <div class="field btns">
-                            <button class="prev-2 prev">Previous</button>
-                            <button class="next-2 next">Next</button>
-                        </div>
-                    </div>
-                    <div class="page">
-                        <div class="title">Contact Info 3:</div>
-                        <div class="field">
-                            <div class="label">Email Address</div>
-                            <input type="text" required />
-                        </div>
-                        <div class="field">
-                            <div class="label">Phone Number</div>
-                            <input type="Number" required />
-                        </div>
-                        <div class="field btns">
-                            <button class="prev-3 prev">Previous</button>
-                            <button class="next-3 next">Next</button>
-                        </div>
-                    </div>
-
-                    <div class="page">
-                        <div class="title">Date of Birth:</div>
-                        <div class="field">
-                            <div class="label">Date</div>
-                            <input type="text" required />
-                        </div>
-                        <div class="field">
-                            <div class="label">Gender</div>
-                            <select required>
-                                <option>Male</option>
-                                <option>Female</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div class="field btns">
-                            <button class="prev-4 prev">Previous</button>
-                            <button class="next-4 next">Next</button>
-                        </div>
-                    </div>
-
-                    <div class="page">
-                        <div class="title">Login Details:</div>
-                        <div class="field">
-                            <div class="label">Username</div>
-                            <input type="text" required />
-                        </div>
-                        <div class="field">
-                            <div class="label">Password</div>
-                            <input type="password" required />
-                        </div>
-                        <div class="field btns">
-                            <button class="prev-5 prev">Previous</button>
-                            <button class="submit">Submit</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+<body class="form">
+    <div class="container_all_form">
+        <div class="sidebar">
+            <h2>Step <span id="stepNumber"></span></h2>
+            <ul>
+                <li class="active">Personal Information</li>
+                <li>
+                    Health Information
+                </li>
+                <li>Education</li>
+                <li>Work Experience</li>
+                <li>Driving License</li>
+                <li>Car Details</li>
+                <li>Insurance Options</li>
+                <li> Upload Documents</li>
+                <li>Bank Information</li>
+            </ul>
         </div>
-        <script src="script.js"></script>
-    </body>
+        <div class="form-container">
+            <form id="multiStepForm">
+                <!-- Step 1 -->
+                <div class="step active">
+                    <h2>Personal Information</h2>
+                    <label>First Name:</label>
+                    <input type="text" required>
+
+                    <label>Last Name:</label>
+                    <input type="text" required>
+
+                    <label>Phone Number:</label>
+                    <input type="tel" required>
+
+                    <label>ID:</label>
+                    <input type="number" required>
+                    
+                    <label for="ID-expiry-date">ID Expiry Date:</label>
+                    <input type="date" id="Id-expiry-date" required>
+                    <label>Email Address:</label>
+                    <input type="email" required>
+
+                    <label>City:</label>
+                    <input type="text" required>
+
+                    <label>Date of Birth:</label>
+                    <input type="date" required>
+
+                    <div class="radio-group">
+                        <label>Marital Status:</label>
+                        <label for="single">Single</label>
+                        <input type="radio" id="single" name="marital_status" value="single">
+                        <label for="married">Married</label>
+                        <input type="radio" id="married" name="marital_status" value="married">
+                        <label for="divorced">Divorced</label>
+                        <input type="radio" id="divorced" name="marital_status" value="divorced">
+                        <label for="widowed">Widowed</label>
+                        <input type="radio" id="widowed" name="marital_status" value="widowed">
+                    </div>
+
+                    <div class="radio-group">
+                        <label>Gender:</label>
+                        <label for="male">Male</label>
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="female">Female</label>
+                        <input type="radio" id="female" name="gender" value="female">
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Step 2: Health Information -->
+                <div class="step">
+                    <h2>Health Information</h2>
+                    <label>Blood Type:</label>
+                    <select required>
+                        <option value="">Select</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+                    <label for="chronic-diseases">Do you have any chronic diseases?</label>
+                    <select id="chronic-diseases" required>
+                        <option value="">Select</option>
+                        <option value="None">None</option>
+                        <option value="Diabetes">Diabetes</option>
+                        <option value="Heart Disease">Heart Disease</option>
+                        <option value="Asthma">Asthma</option>
+                        <option value="Hypertension">Hypertension</option>
+                        <option value="Arthritis">Arthritis</option>
+                        <option value="Cancer">Cancer</option>
+                        <option value="Kidney Disease">Kidney Disease</option>
+                        <option value="Liver Disease">Liver Disease</option>
+                        <option value="Other">Other (Specify Below)</option>
+                    </select>
+                    <label>Other chronic diseases</label>
+                    <input type="text" required>
+
+                    <div class="radio-group">
+                        <label>Do you have any allergies?</label>
+                        <label for="yes">Yes</label>
+                        <input type="radio" id="yes" name="allergies" value="yes">
+                        <label for="no">No</label>
+                        <input type="radio" id="no" name="allergies" value="no">
+                    </div>
+
+                    <div class="radio-group">
+                        <label>Are you a smoker?</label>
+                        <label for="yes">Yes</label>
+                        <input type="radio" id="yes" name="smoker" value="yes">
+                        <label for="no">No</label>
+                        <input type="radio" id="no" name="smoker" value="no">
+                    </div>
+
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step">
+                    <h2>Education</h2>
+                    <p>Enter your education details.</p>
+                    <label for="education-level">Highest Level of Education:</label>
+                    <select id="education-level" required>
+                        <option value="">Select</option>
+                        <option value="No Formal Education">No Formal Education</option>
+                        <option value="High School">High School</option>
+                        <option value="Diploma">Diploma</option>
+                        <option value="Bachelor's Degree">Bachelor's Degree</option>
+                        <option value="Master's Degree">Master's Degree</option>
+                        <option value="Doctorate (PhD)">Doctorate (PhD)</option>
+                    </select>
+
+                </div>
+                <!-- Step 4 -->
+                <div class="step">
+                    <h2>Work Experience</h2>
+                    <p>Enter your work experience details.</p>
+                    <label for="employment-status">Current Employment Status:</label>
+                    <select id="employment-status" required>
+                        <option value="">Select</option>
+                        <option value="Employed">Employed</option>
+                        <option value="Self-Employed">Self-Employed</option>
+                        <option value="Unemployed">Unemployed</option>
+                        <option value="Retired">Retired</option>
+                        <option value="Student">Student</option>
+                    </select>
+
+                    <label>Company:</label>
+                    <input type="text" required>
+                    <label>Role:</label>
+                    <input type="text" required>
+                    <label>Do you drive as part of your job?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="work-driving" value="Yes" required> Yes</label>
+                        <label><input type="radio" name="work-driving" value="No" required> No</label>
+                    </div>
+                    <!-- Step 5 -->
+                </div>
+                <div class="step">
+                    <h2>Driving License</h2>
+                    <label for="license-degree">Degree of Driving License:</label>
+                    <select id="license-degree" required>
+                        <option value="" disabled selected>Select your license degree</option>
+                        <option value="Learner’s Permit">Learner’s Permit</option>
+                        <option value="Standard License">Standard License</option>
+                        <option value="Commercial License">Commercial License</option>
+                        <option value="Heavy Vehicle License">Heavy Vehicle License</option>
+
+                    </select>
+                    <label for="license-number">License Number:</label>
+                    <input type="text" id="license-number" placeholder="Enter your license number" required>
+                    <!-- License Issue Date -->
+                    <label for="license-issue-date">License Issue Date:</label>
+                    <input type="date" id="license-issue-date" required>
+
+                    <!-- License Expiry Date -->
+                    <label for="license-expiry-date">License Expiry Date:</label>
+                    <input type="date" id="license-expiry-date" required>
+
+                    <label>Do you frequently travel for work?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="work-travel" value="Yes" required> Yes</label>
+                        <label><input type="radio" name="work-travel" value="No" required> No</label>
+                    </div>
+                    <div class="radio-group">
+                        <label>Have you had any driving accidents in the past 5 years?</label>
+
+                        <label><input type="radio" name="work-accidents" value="Yes" required> Yes</label>
+                        <label><input type="radio" name="work-accidents" value="No" required> No</label>
+                    </div>
+
+                </div>
+                <!-- Car Details for Car Insurance -->
+                <div class="step">
+                    <h2>Car Details</h2>
+
+
+
+                    <!-- Car Make (Brand) -->
+                    <label for="car-make">Car Make (Brand):</label>
+                    <select id="car-make" required>
+                        <option value="" disabled selected>Select Car Brand</option>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Honda">Honda</option>
+                        <option value="Ford">Ford</option>
+                        <option value="BMW">BMW</option>
+                        <option value="Mercedes">Mercedes</option>
+                        <option value="Nissan">Nissan</option>
+                        <option value="Chevrolet">Chevrolet</option>
+                        <option value="Hyundai">Hyundai</option>
+                    </select>
+
+                    <!-- Car Model -->
+                    <label for="car-model">Car Model:</label>
+                    <select id="car-model" required>
+                        <option value="" disabled selected>Select Car Model</option>
+                    </select>
+
+
+                    <label for="Car Manufacturing Year">Car Manufacturing Year:</label>
+                    <select id="Car Manufacturing Year" required>
+                        <option value="" disabled selected>Select Car Manufacturing Year</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                    </select>
+                    <label for="car-price">Car Price</label>
+                    <input type="number" required>
+
+
+                    <!-- Estimated Annual Mileage -->
+                    <label for="car-mileage">Estimated Annual Mileage (km):</label>
+                    <input type="number" id="car-mileage" placeholder="E.g., 15000" min="0" required>
+                    <label for="license-plate-num">Licenses Plate Number</label>
+                    <input type="number" required>
+
+                    <!-- Parking Location -->
+                    <label>Where do you park your car overnight?</label>
+                    <select id="car-parking" required>
+                        <option value="">Select</option>
+                        <option value="Garage">Garage</option>
+                        <option value="Driveway">Driveway</option>
+                        <option value="Street Parking">Street Parking</option>
+                        <option value="Secured Parking Lot">Secured Parking Lot</option>
+                    </select>
+                    <!-- Security Features -->
+                    <label>Does your car have the following security features?</label>
+                    <div class="radio-group">
+                        <label><input type="checkbox" name="security-features" value="Anti-theft System"> Anti-theft
+                            System</label>
+                        <label><input type="checkbox" name="security-features" value="GPS Tracker"> GPS Tracker</label>
+                        <label><input type="checkbox" name="security-features" value="Dashcam"> Dashcam</label>
+                        <label><input type="checkbox" name="security-features" value="Airbags"> Airbags</label>
+                        <label><input type="checkbox" name="security-features" value="ABS Brakes"> ABS Brakes</label>
+                    </div>
+
+
+                </div>
+                <!-- Insurance Options  -->
+                <div class="step">
+                    <h2>Choose Your Insurance Plan</h2>
+
+                    <label for="insurance-type">Select Insurance Type:</label>
+                    <select id="insurance-type" required>
+                        <option value="" disabled selected>Select Insurance Type</option>
+                        <option value="Comprehensive">Comprehensive Insurance</option>
+                        <option value="Third-Party">Third-Party Liability</option>
+                        <option value="Collision">Collision Coverage</option>
+                        <option value="Personal Injury">Personal Injury Protection</option>
+                        <option value="Uninsured Motorist">Uninsured/Underinsured Motorist Coverage</option>
+                    </select>
+
+                    <label for="coverage-amount">Coverage Amount:</label>
+                    <input type="number" id="coverage-amount" placeholder="Enter Amount " required>
+
+                    <label>Additional Coverage:</label>
+                    <div class="radio-group">
+                        <input type="checkbox" id="roadside-assistance" name="additional-coverage">
+                        <label for="roadside-assistance">Roadside Assistance</label>
+
+                        <input type="checkbox" id="rental-reimbursement" name="additional-coverage">
+                        <label for="rental-reimbursement">Rental Car Reimbursement</label>
+
+                        <input type="checkbox" id="glass-coverage" name="additional-coverage">
+                        <label for="glass-coverage">Glass Coverage</label>
+                    </div>
+
+
+                </div>
+
+
+                <!-- Step 4: Upload Documents -->
+                <div class="step">
+                    <h2>Upload Documents</h2>
+                    <label>Resume:</label>
+                    <input type="file" required>
+                </div>
+                <!-- Step 5: Bank Information -->
+                <div class="step">
+                    <h2>Bank Information</h2>
+                    <label>Bank Name:</label>
+                    <input type="text" required>
+                    <label>Account Number:</label>
+                    <input type="text" required>
+                </div>
+                <div class="buttons">
+                    <button type="button" id="prevBtn" disabled>Back</button>
+                    <button type="button" id="nextBtn">Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
 </html>
