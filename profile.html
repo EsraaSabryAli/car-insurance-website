@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+    <style>
+        body {
+            font-family: Poppins;
+            display: flex;
+            /* margin: 0; */
+        }
+
+        .container {
+            display: flex;
+            background: #ffffff;
+            width: 100%;
+        }
+
+        .sidebar {
+            height: 2000;
+            justify-content: space-between;
+            width: 20px;
+            background: #000000;
+            color: #ffffff;
+            font-family: Poppins;
+            padding: 20px;
+            transition: width 0.3s ease-in-out;
+            overflow: hidden;
+            white-space: nowrap;
+            border-radius: 0px 10px 10px 0px;
+
+        }
+
+        .sidebar:hover {
+            width: 250px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            /* Adds spacing between list items */
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 15px;
+            /* Adjust the spacing as needed */
+        }
+
+
+        .active {
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-left: 2px;
+            color: #cccccc;
+        }
+
+        .settings-panel {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+     
+
+
+        
+
+        @keyframes bounceIcon {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes rotateIcon {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* تأثير الصعود والهبوط */
+        @keyframes logoutFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+/* normal */
+            50% {
+                transform: translateY(-10px);
+            }
+
+            /*  above */
+        }
+
+        /* stop ll animation*/
+        .sidebar ul li i {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar ul li a:hover {
+            color: #ffffff;
+        }
+
+
+        /* icon move on touch  */
+        .sidebar ul li:nth-child(1):hover i {
+            animation: bounceIcon 0.6s ease infinite;
+        }
+
+        .sidebar ul li:nth-child(2):hover i {
+            animation: rotateIcon 0.8s linear infinite;
+        }
+
+        .sidebar ul li:nth-child(3):hover i {
+            animation: rotateIcon 0.7s linear infinite;
+        }
+
+        /*Setting Animation */
+        .sidebar ul li:nth-child(4):hover i {
+            animation: logoutFloat 1.5s ease-in-out infinite;
+        }
+
+        /* logout animaton*/
+
+        .side {
+            width: 250px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .side ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .side ul li {
+            padding: 15px 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .side ul li:hover,
+        .active {
+            border-radius: 5px;
+            background-color: rgb(232, 226, 223);
+        }
+
+        .side ul li i {
+            margin-right: 10px;
+        }
+
+        .side ul li a {
+            text-decoration: none;
+            color: black;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .side ul li a:hover {
+            color: #ffffff;
+        }
+        /* ======================pic====================== */
+        /* Profile Picture Styling */
+.Profile-Picture {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid transparent;
+    display: block;
+    margin: 10px auto;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(45deg, #f3eeed, #000, #ff7e5f) border-box;
+}
+
+/* Hover Effect */
+.Profile-Picture:hover {
+    transform: scale(1.1);
+    box-shadow: #f3eeed;
+}
+
+/* Animation for Glow Effect */
+@keyframes glowBorder {
+    0% {
+        box-shadow: 0 0 5px #f3eeed
+    }
+    50% {
+        box-shadow: 0 0 15px #f3eeed;
+    }
+    100% {
+        box-shadow: 0 0 5px #f3eeed;
+    }
+}
+
+/* Apply Glow Effect on Hover */
+.Profile-Picture:hover {
+    animation: glowBorder 1.5s infinite alternate;
+}
+
+
+/* Custom File Input */
+.custom-file-input {
+    display: none;
+}
+
+.custom-file-label , .remove-label{
+    display:inline-flex;
+    margin-left: 150px ;
+margin-top: 50px;
+    width: 200px;
+    padding: 10px;
+    background-color: #06080b;
+    color: white;
+    text-align: center;
+    border-radius: 25px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center; 
+}
+
+.custom-file-label:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+/* Validation Message */
+.text-danger {
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+} */
+
+.remove-label i {
+    font-size: 16px;
+}
+
+/* Hover Effect */
+.remove-label:hover {
+    background: #d72638;
+    transform: scale(1.05);
+}
+
+   
+    /* =====================form====================== */
+
+        .form-floating {
+            position: relative;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .form-floating label {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 16px;
+            color: #777;
+            transition: 0.3s ease;
+            pointer-events: none;
+            background: white;
+            padding: 0 5px;
+
+        }
+
+        .form-floating input {
+            width:400px;
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 20px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            outline: none;
+        }
+
+        .form-floating input:focus {
+            border-color: #007bff;
+        }
+
+        .form-floating input:focus+label,
+        .form-floating input:not(:placeholder-shown)+label {
+            top: -10px;
+            left: 10px;
+            font-size: 14px;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+   
+       .supmit{
+        margin-left: 350px ;
+            width: 200px;
+            padding: 10px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .supmit:hover {
+    background-color: #cccccc;
+    color: #000000;
+    font-style: bold;
+    font-size: 16px;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>🛡️ Amanak</h2>
+            <ul>
+                <li><a href="wallet.html"><i class="fa-solid fa-wallet"></i> Wallet</a></li>
+                <li><a href="cards.html"><i class="fa-solid fa-credit-card"></i> Cards and Receipts</a></li>
+                <li class="active"><a href="profile.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                <li><a href="logout.html"><i class="fa-solid fa-right-from-bracket"></i> Log out</a></li>
+            </ul>
+        </aside>
+
+
+
+        <aside class="side">
+            <ul>
+                <li class="active"><a href="profile.html"><i class="fa-solid fa-user"></i> Profile Settings</a></li>
+                <li> <a href="reset.html"><i class="fa-solid fa-lock"></i> Reset Password</a></li>
+
+            </ul>
+        </aside>
+        <main class="settings-panel">
+            <h2>Profile Settings</h2>
+
+            <form id="profile-form" method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <!-- Profile Picture Section -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <h4>Profile Picture</h4>
+                            <label asp-for="Input.ProfilePicture" class="w-100"></label>
+
+                            <!-- Display Profile Picture or Default -->
+                            <img id="profilePicture"  class="Profile-Picture img-thumbnail"
+                                src="@(Model.Input.ProfilePicture != null && Model.Input.ProfilePicture.Length > 0
+                 ? $" data:image/*;base64,{Convert.ToBase64String(Model.Input.ProfilePicture)}"
+                                : "/images/UserDefaultProfilePicture.png" )" />
+
+                            <!-- File Input for Upload -->
+                            <!-- <div class="custom-file mt-2"> -->
+                                <input type="file" accept="image/*" asp-for="Input.ProfilePicture"
+                                    class="custom-file-input" id="profilePictureInput" />
+                                <label class="custom-file-label" for="profilePictureInput"> Choose Picture </label>
+                                
+                                <label id="removePicLabel" class="remove-label"><span><i class="fas fa-trash-alt"></i>  Remove Picture</span>
+                                    
+                                </label>
+                            </div> 
+                            <span asp-validation-for="Input.ProfilePicture" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        
+                        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                        <div class="form-floating mb-3">
+                            <h4>Full Name</h4>
+                            <input asp-for="Input.FullName" class="form-control"
+                               />
+                            <label asp-for="Input.FullName" class="form-label"></label>
+                            <span asp-validation-for="Input.FullName" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating mb-3">
+                           
+                            <h4>Username</h4>
+                            <input asp-for="Username" class="form-control" disabled />
+                            <label asp-for="Username" class="form-label"></label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <h4>Phone Number</h4>
+                            <input asp-for="Input.PhoneNumber" class="form-control" />
+                            <label asp-for="Input.PhoneNumber" class="form-label"></label>
+                            <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <h4>ID</h4>
+                            <input asp-for="Input.IdentificationNumber" class="form-control" />
+                            <label asp-for="Input.IdentificationNumber" class="form-label"></label>
+                            <span asp-validation-for="Input.IdentificationNumber" class="text-danger"></span>
+                        </div>
+                       
+                        <div class="form-floating mb-3">
+                            <h4>Full Address</h4>
+                            <input asp-for="Input.FullAddress" class="form-control"
+                                 />
+                            <label asp-for="Input.FullAddress" class="form-label"></label>
+                            <span asp-validation-for="Input.FullAddress" class="text-danger"></span>
+                        </div>
+                        <button id="update-profile-button" type="submit"
+                            class="supmit">Save</button>
+
+                        
+                    </div>
+            </form>
+
+        </main>
+
+        <script>
+            document.getElementById('profilePictureInput').addEventListener('change', function (event) {
+                const file = event.target.files[0];
+                const preview = document.getElementById('profilePicture');
+                const label = event.target.nextElementSibling;
+
+                if (file) {
+                    // Validate file type
+                    const allowedTypes = ["image/jpeg", "image/png", "image/jpg", "image/gif"];
+                    if (!allowedTypes.includes(file.type)) {
+                        alert("Invalid file type! Please upload an image (jpeg, jpg, png, gif).");
+                        event.target.value = ""; // Reset input
+                        return;
+                    }
+
+                    // Validate file size (2MB max)
+                    if (file.size > 2 * 1024 * 1024) {
+                        alert("File size must be less than 2MB!");
+                        event.target.value = ""; // Reset input
+                        return;
+                    }
+                    // Show image preview
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        preview.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    // Reset if no file selected
+                    preview.src = "/images/UserDefaultProfilePicture.png"; // Default image
+                }
+            });
+            document.getElementById('removePicLabel').addEventListener('click', function () {
+    const profilePic = document.getElementById('profilePicture'); // الصورة الشخصية
+    const fileInput = document.getElementById('profilePictureInput'); // إدخال الملف
+
+    // حذف الصورة نهائيًا
+    profilePic.src = "/images/UserDefaultProfilePicture.png"; // استبدالها بالصورة الافتراضية
+    fileInput.value = ""; // تفريغ إدخال الملف
+});
+
+// تحديث الصورة عند اختيار صورة جديدة
+document.getElementById('profilePictureInput').addEventListener('change', function (event) {
+    const profilePic = document.getElementById('profilePicture');
+    const file = event.target.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            profilePic.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+    
+});
+
+
+        </script>
+
+</body>
+
+</html>
