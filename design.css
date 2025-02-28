@@ -204,11 +204,13 @@ input {
     border-radius: 4px;
     font-size: 14px;
 }
+/* .forget{color: #007b5e;} */
+.forget  :hover {color: #11abf3}
 
 .sign-up-button {
     width: 100%;
     padding: 10px;
-    background-color: #000000;
+    background-color: #007b5e;
     color: white;
     border: none;
     border-radius: 25px;
@@ -218,12 +220,12 @@ input {
 
 } 
 
-button:hover {
+/* button:hover {
     background-color: #cccccc;
     color: #000000;
     font-style: bold;
     font-size: 16px;
-}
+} */
 
 .social-login {
     display: flex;
@@ -248,13 +250,13 @@ button:hover {
 
 a {
     text-decoration: none;
-    color: #000000;
+    color: #007b5e;
     transition: color 0.3s ease;
 }
 
 a:hover {
     text-decoration: underline;
-    color: #000000;
+    color: #11abf3;
 }
 
 @keyframes float {
@@ -383,7 +385,7 @@ input[type="file"] {
 }
 
 button {
-    background: black;
+    background: #007b5e;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -395,11 +397,11 @@ button {
     transition: all 0.3s ease;
 }
 
-button:hover {
+/* button:hover {
     background: #cccccc;
     transform: translateY(-3px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
+} */
 
 button:disabled {
     background-color: #aaa;
