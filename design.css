@@ -434,8 +434,8 @@ button:disabled {
 }
 
 .radio-group input[type="radio"]:checked {
-    border-color: black;
-    background-color: black;
+    border-color:#007b5e;
+    background-color:#007b5e;
 }
 
 .radio-group input[type="radio"]:checked::before {

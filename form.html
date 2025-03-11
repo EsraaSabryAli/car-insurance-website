@@ -32,13 +32,13 @@
                 <li>
                     Health Information
                 </li>
-                <li>Education</li>
-                <li>Work Experience</li>
+              
                 <li>Driving License</li>
-                <li>Car Details</li>
+                <li>Car Details and Usage </li>
                 <li>Insurance Options</li>
                 <li> Upload Documents</li>
                 <li>Bank Information</li>
+                <li>Acknowledgement</li>
             </ul>
         </div>
         <div class="form-container">
@@ -60,35 +60,13 @@
                     
                     <label for="ID-expiry-date">ID Expiry Date:</label>
                     <input type="date" id="Id-expiry-date" required>
-                    <label>Email Address:</label>
-                    <input type="email" required>
+                    <!-- <label>Email Address:</label>
+                    <input type="email" required> -->
 
                     <label>City:</label>
                     <input type="text" required>
 
-                    <label>Date of Birth:</label>
-                    <input type="date" required>
-
-                    <div class="radio-group">
-                        <label>Marital Status:</label>
-                        <label for="single">Single</label>
-                        <input type="radio" id="single" name="marital_status" value="single">
-                        <label for="married">Married</label>
-                        <input type="radio" id="married" name="marital_status" value="married">
-                        <label for="divorced">Divorced</label>
-                        <input type="radio" id="divorced" name="marital_status" value="divorced">
-                        <label for="widowed">Widowed</label>
-                        <input type="radio" id="widowed" name="marital_status" value="widowed">
-                    </div>
-
-                    <div class="radio-group">
-                        <label>Gender:</label>
-                        <label for="male">Male</label>
-                        <input type="radio" id="male" name="gender" value="male" required>
-                        <label for="female">Female</label>
-                        <input type="radio" id="female" name="gender" value="female">
-
-                    </div>
+              
 
 
                 </div>
@@ -144,47 +122,6 @@
 
                 </div>
 
-                <!-- Step 3 -->
-                <div class="step">
-                    <h2>Education</h2>
-                    <p>Enter your education details.</p>
-                    <label for="education-level">Highest Level of Education:</label>
-                    <select id="education-level" required>
-                        <option value="">Select</option>
-                        <option value="No Formal Education">No Formal Education</option>
-                        <option value="High School">High School</option>
-                        <option value="Diploma">Diploma</option>
-                        <option value="Bachelor's Degree">Bachelor's Degree</option>
-                        <option value="Master's Degree">Master's Degree</option>
-                        <option value="Doctorate (PhD)">Doctorate (PhD)</option>
-                    </select>
-
-                </div>
-                <!-- Step 4 -->
-                <div class="step">
-                    <h2>Work Experience</h2>
-                    <p>Enter your work experience details.</p>
-                    <label for="employment-status">Current Employment Status:</label>
-                    <select id="employment-status" required>
-                        <option value="">Select</option>
-                        <option value="Employed">Employed</option>
-                        <option value="Self-Employed">Self-Employed</option>
-                        <option value="Unemployed">Unemployed</option>
-                        <option value="Retired">Retired</option>
-                        <option value="Student">Student</option>
-                    </select>
-
-                    <label>Company:</label>
-                    <input type="text" required>
-                    <label>Role:</label>
-                    <input type="text" required>
-                    <label>Do you drive as part of your job?</label>
-                    <div class="radio-group">
-                        <label><input type="radio" name="work-driving" value="Yes" required> Yes</label>
-                        <label><input type="radio" name="work-driving" value="No" required> No</label>
-                    </div>
-                    <!-- Step 5 -->
-                </div>
                 <div class="step">
                     <h2>Driving License</h2>
                     <label for="license-degree">Degree of Driving License:</label>
@@ -277,6 +214,8 @@
                         <option value="Street Parking">Street Parking</option>
                         <option value="Secured Parking Lot">Secured Parking Lot</option>
                     </select>
+                    <br><br>
+
                     <!-- Security Features -->
                     <label>Does your car have the following security features?</label>
                     <div class="radio-group">
@@ -287,6 +226,30 @@
                         <label><input type="checkbox" name="security-features" value="Airbags"> Airbags</label>
                         <label><input type="checkbox" name="security-features" value="ABS Brakes"> ABS Brakes</label>
                     </div>
+                    <br><br>
+                    <label> What is the purpose of the vehicle's use?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="vehicle_use" value="personal"> Personal use</label><br>
+                        <label><input type="radio" name="vehicle_use" value="commercial"> Commercial use</label><br>
+                        <label><input type="radio" name="vehicle_use" value="taxi">Taxi </label><br>
+                        <label><input type="radio" name="vehicle_use" value="delivery"> Delivery via ride-hailing apps</label><br>
+                        <label><input type="radio" name="vehicle_use" value="transport"> Transporting goods or equipment</label>
+                    </div>
+                    <br><br>
+                    
+                    <label> Is the vehicle rented from a car rental company?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="rental_company" value="yes"> Yes</label><br>
+                        <label><input type="radio" name="rental_company" value="no"> No</label>
+                    </div>
+                    <br><br>
+                    
+                    <label> Is the vehicle rented out to other drivers?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="rented_out" value="yes"> Yes</label><br>
+                        <label><input type="radio" name="rented_out" value="no"> No</label>
+                    </div>
+                    
 
 
                 </div>
@@ -296,12 +259,10 @@
 
                     <label for="insurance-type">Select Insurance Type:</label>
                     <select id="insurance-type" required>
-                        <option value="" disabled selected>Select Insurance Type</option>
-                        <option value="Comprehensive">Comprehensive Insurance</option>
-                        <option value="Third-Party">Third-Party Liability</option>
-                        <option value="Collision">Collision Coverage</option>
-                        <option value="Personal Injury">Personal Injury Protection</option>
-                        <option value="Uninsured Motorist">Uninsured/Underinsured Motorist Coverage</option>
+                        <option value=" disabled selected">Select Insurance Type</option>
+                        <option value="1">تأمين المسؤلية المدنية المادية تجاه ممتلكات الغير </option>
+                        <option value="2">الحريق والسرقة فقط </option>
+                        <option value="3"> التغطية الشاملة </option>
                     </select>
 
                     <label for="coverage-amount">Coverage Amount:</label>
@@ -326,9 +287,11 @@
                 <!-- Step 4: Upload Documents -->
                 <div class="step">
                     <h2>Upload Documents</h2>
-                    <label>Resume:</label>
-                    <input type="file" required>
+                    <h4>Please upload a single PDF file containing both your driver's license and ID.</h4>
+                        
+                    <input type="file" accept=".pdf" required>
                 </div>
+                
                 <!-- Step 5: Bank Information -->
                 <div class="step">
                     <h2>Bank Information</h2>
@@ -337,6 +300,22 @@
                     <label>Account Number:</label>
                     <input type="text" required>
                 </div>
+                <div class="step">
+                <div class="container">
+                    <h2>إقرار الموافقة</h2>
+                    <p>
+                        أقر أنا الموقع أدناه أن جميع البيانات الواردة بطلب التأمين صحيحة ومطابقة للواقع وأنني لم أخف عن شركة التأمين أي أمر من الأمور الجوهرية المتعلقة بالخطر المطلوب تأمينه والتي من شأنها أن تؤثر على قرار الشركة في قبول التأمين من عدمه أو في تحديد الأسعار والشروط التي يتم على أساسها قبول التعاقد.
+                    </p>
+                    <p>
+                        كما أعلم أن كل إقرار غير صحيح أو غير مستوف يصبح معه العقد قابلا للبطلان، كما أقبل أن يكون طلب التأمين وهذا الإقرار المذيل بالطلب أساسا للتعاقد وجزءا متمما لوثيقة التأمين.
+                    </p>
+                
+                </div>
+                <br> <br>
+                <label style="display:flex; align-items: center; gap: 5px;">
+                    <input type="checkbox" id="agreeCheckbox"> أوافق على الشروط والأحكام
+                </label>
+            </div>
                 <div class="buttons">
                     <button type="button" id="prevBtn" disabled>Back</button>
                     <button type="button" id="nextBtn">Next</button>
